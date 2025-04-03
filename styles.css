@@ -13,6 +13,7 @@ jda-button .btn-container {
   font-weight: 550;
   transition: background-color 0.3s ease;
   cursor: pointer;
+  min-width: -moz-max-content;
   min-width: max-content;
   max-width: 298px;
   height: 40px;
@@ -21,7 +22,9 @@ jda-button .btn-container {
   font-family: "Source Sans Pro", sans-serif !important;
 }
 jda-button .btn-container mat-icon {
+  width: -moz-fit-content;
   width: fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   font-size: 16px !important;
 }
@@ -279,6 +282,7 @@ jda-leyenda .leyenda-principal-derecha div {
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  min-width: -moz-max-content;
   min-width: max-content;
   height: 70px;
   padding-block: 0px;
@@ -297,6 +301,7 @@ jda-leyenda .leyenda-principal div {
   justify-content: center;
   width: 12.5rem;
   height: 70px;
+  min-width: -moz-max-content;
   min-width: max-content;
   transition: all 0.3s ease;
 }
@@ -319,6 +324,7 @@ jda-leyenda .leyenda-secundaria div {
   justify-content: center;
   align-items: start;
   border-right: 1px solid rgba(170, 170, 170, 0.2392156863);
+  min-width: -moz-max-content;
   min-width: max-content;
   height: 70px;
   padding-block: 0px;
@@ -398,7 +404,8 @@ jda-modal .modal-backdrop {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.32);
-  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
   z-index: 10;
 }
 jda-modal .modal-section {
@@ -506,7 +513,8 @@ jda-header nav {
 jda-header .logo img {
   height: 100%;
   width: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   height: 65px;
   display: flex;
 }
@@ -631,6 +639,41 @@ jda-header .contenedor-buscador-caja {
 }
 jda-header .icono-cerrar-para-caja-buscador {
   cursor: pointer !important;
+}
+jda-header .buscador {
+  display: block;
+  margin-top: 120px; /* Ajusta el margen según sea necesario */
+}
+jda-header .div-flotante {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 4;
+  background-color: white;
+  height: 250px;
+  width: 100%;
+  border-bottom: 5px solid #087021;
+}
+jda-header .div-flotante b {
+  font-size: 19px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+jda-header .div-flotante div {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+jda-header .div-flotante jda-input {
+  width: 50% !important;
+}
+jda-header .div-flotante-fondo {
+  position: absolute;
+  width: 100%;
+  height: 65%;
+  background: rgba(0, 0, 0, 0.2392156863);
+  z-index: 3;
 }
 
 .menuDesplgablesSelect {
@@ -1510,7 +1553,8 @@ jda-tabla app-pagination .pagination input:hover {
 }
 jda-tabla app-pagination .containerpaginadorSelectmostrar {
   padding-right: 15px;
-  text-align-last: right;
+  -moz-text-align-last: right;
+       text-align-last: right;
   display: flex;
   align-items: baseline;
   justify-content: end;
@@ -1610,7 +1654,8 @@ jda-tabla .btn-filtro-principal mat-icon {
 }
 jda-tabla .btn-filtro-principal .mat-icon {
   -webkit-user-select: none;
-  user-select: none;
+  -moz-user-select: none;
+       user-select: none;
   background-repeat: no-repeat;
   display: inline-block;
   fill: currentColor;
@@ -1653,7 +1698,8 @@ jda-tabla .spinner-wrapper-tabla {
   bottom: 121px;
   width: 99.5%;
   background-color: rgba(0, 0, 0, 0.02);
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   border-radius: 10px;
   transform: scaleX(1.009);
   justify-content: center;
@@ -1752,7 +1798,9 @@ jda-tabla .form-control2 {
   font-weight: 400;
   line-height: 1.5;
   color: #333333;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: #FFFFFF;
   background-clip: padding-box;
   border: 1px solid #dee2e6;
@@ -1987,6 +2035,13 @@ jda-tabla .modal-configurarColumnasTabla-button-aceptar {
   margin-top: 25px;
   padding-right: 15px;
 }
+jda-tabla .mat-mdc-option .mdc-list-item__primary-text {
+  font-family: #087021 !important;
+}
+jda-tabla .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text,
+jda-tabla .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after, jda-tabla .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-indeterminate::after {
+  color: #087021 !important;
+}
 
 mat-row.estilosParaSeleccionMultiple {
   transition: all 0.1s ease;
@@ -2038,7 +2093,8 @@ jda-tabla app-pagination mat-select {
   align-items: center;
   font-size: 13px;
   font-weight: bold;
-  text-align-last: center;
+  -moz-text-align-last: center;
+       text-align-last: center;
   font-family: "Source Sans Pro", sans-serif !important;
   padding-left: 7px;
   padding-right: 7px;
@@ -2128,6 +2184,12 @@ jda-tabla mat-spinner::ng-deep circle {
 }
 jda-tabla .mat-expansion-panel:not([class*=mat-elevation-z]) {
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0);
+}
+jda-tabla .filtroPrincipalInput::-moz-placeholder {
+  color: #333333;
+  font-size: 15px;
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
 }
 jda-tabla .filtroPrincipalInput::placeholder {
   color: #333333;
@@ -2385,7 +2447,8 @@ jda-tabla mat-chip-row .mat-icon.mat-icon.notranslate.material-icons.mat-ligatur
   }
   jda-tabla .containerpaginadorSelectmostrar {
     padding-right: 15px;
-    text-align-last: right;
+    -moz-text-align-last: right;
+         text-align-last: right;
     display: flex;
     align-items: baseline;
     justify-content: center !important;
@@ -2676,6 +2739,4 @@ body {
   color: #333;
   background-color: #FAFAFA;
   overflow-x: hidden;
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=main.css.map */
